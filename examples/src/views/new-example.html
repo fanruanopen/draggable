@@ -1,0 +1,29 @@
+{% extends 'views/templates/document.html' %}
+
+{% import 'components/Document/Head.html' as Head %}
+{% import 'components/Sidebar/Sidebar.html' as Sidebar %}
+{% import 'components/PageHeader/PageHeader.html' as PageHeader %}
+
+{% import 'content/Draggable/NewExample/NewExample.html' as NewExample %}
+
+{% set ViewAttrs = {
+  id: 'NewExample',
+  parent: 'Draggable',
+  child: 'New example',
+  subheading: 'This is the description I was asked to enter during the "new page" generator that Promhize built.'
+} %}
+
+{% block PageId %}{{ ViewAttrs.id }}{% endblock %}
+
+{% block head %}
+  {{ Head.render(ViewAttrs) }}
+{% endblock %}
+
+{% block sidebar %}
+  {{ Sidebar.render(ViewAttrs, DataPages) }}
+{% endblock %}
+
+{% block main %}
+  {{ PageHeader.render(ViewAttrs.parent, ViewAttrs.subheading) }}
+  {{ NewExample.render(ViewAttrs.id) }}
+{% endblock %}

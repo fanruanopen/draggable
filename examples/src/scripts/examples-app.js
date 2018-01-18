@@ -3,6 +3,7 @@ import MobileNav from '../components/MobileNav';
 import Home from '../content/Home';
 // Draggable
 import DragEvents from '../content/Draggable/DragEvents';
+import NewExample from '../content/Draggable/NewExample';
 // import RestrictAxis from '../content/Draggable/RestrictAxis';
 // Droppable
 import OneAndOnly from '../content/Droppable/OneAndOnly';
@@ -30,6 +31,7 @@ if (navActivator) {
 // Initialize all examples
 Home();
 DragEvents();
+NewExample();
 // RestrictAxis();
 OneAndOnly();
 // Capacity();
